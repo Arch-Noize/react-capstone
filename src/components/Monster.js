@@ -8,7 +8,7 @@ const ClassItem = ({ id, name }) => (
 );
 
 ClassItem.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
 };
 

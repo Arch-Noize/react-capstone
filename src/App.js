@@ -3,23 +3,24 @@ import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import Search from './components/Search';
 import Home from './components/Home';
-import Classes from './components/Classes';
+import MonsterList from './components/MonsterList';
 import './App.css';
-import { getClasses } from './redux/class/classSlice';
+import { getAllMonsters, getMonsterByBook, getMonster } from './redux/class/monsterSlice';
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getClasses());
+    dispatch(getAllMonsters());
+    dispatch(getMonsterByBook());
+    dispatch(getMonster());
   }, []);
 
   return (
     <>
       <Search />
-      <Classes />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/classes" element={<Classes />} />
+        <Route path="/monsters" element={<MonsterList />} />
       </Routes>
     </>
   );
