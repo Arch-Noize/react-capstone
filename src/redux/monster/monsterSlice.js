@@ -8,7 +8,7 @@ const initialState = {
 };
 
 export const getAllMonsters = createAsyncThunk('monster/getAllMonsters', async () => {
-  const res = await axios.get('https://api.open5e.com/v1/monsters/');
+  const res = await axios.get('https://api.open5e.com/v1/monsters/?limit=20');
   const data = res.data.results;
   return data.map((item) => ({
     name: item.name,
@@ -27,11 +27,23 @@ export const getMonsterByBook = createAsyncThunk('monster/getMonsterByBook', asy
 
 export const getMonster = createAsyncThunk('monster/getMonster', async () => {
   const res = await axios.get('https://api.open5e.com/v1/monsters/a-mi-kuk');
-  const { data } = res.data;
-  console.log(res.data);
-  return data.map((item) => ({
-    name: item.name,
-  }));
+  // console.log(res.data);
+  const data = {
+    name: res.data.name,
+    ac: res.data.armor_class,
+    hp: res.data.hit_points,
+    stats: [{
+      str: res.data.strength,
+      dex: res.data.dexterity,
+      con: res.data.constitution,
+      int: res.data.intelligence,
+      wis: res.data.wisdom,
+      cha: res.data.charisma,
+    }],
+    cr: res.data.challenge_rating,
+  };
+  console.log(data);
+  return data;
 });
 
 const monsterSlice = createSlice({
@@ -56,7 +68,7 @@ const monsterSlice = createSlice({
       state.isLoading = true;
     },
     [getMonsterByBook.fulfilled]: (state, action) => {
-      state.mosnters = action.payload;
+      state.monsters = action.payload;
       state.isLoading = false;
     },
     [getMonsterByBook.rejected]: (state) => {

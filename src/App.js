@@ -5,13 +5,12 @@ import Search from './components/Search';
 import Home from './components/Home';
 import MonsterList from './components/MonsterList';
 import './App.css';
-import { getAllMonsters, getMonsterByBook, getMonster } from './redux/class/monsterSlice';
+import { getAllMonsters, getMonster } from './redux/monster/monsterSlice';
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllMonsters());
-    dispatch(getMonsterByBook());
     dispatch(getMonster());
   }, []);
 

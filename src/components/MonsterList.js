@@ -1,13 +1,22 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Monster from './Monster';
 
-const Classes = () => {
-  const { monsters } = useSelector((state) => state.monster);
+const MonsterList = () => {
+  const monsters = useSelector((state) => state.monster.monsters);
+  const monsterStat = useSelector((state) => state.monster.monsterStats);
 
   return (
     <>
-      <h1>List of classes</h1>
+      <Link to="/">
+        <h1>List of classes</h1>
+      </Link>
+      <div>
+        Testing a new name:
+        {' '}
+        {monsterStat.name}
+      </div>
       <div>
         {monsters.map((item) => (
           <Monster
@@ -21,4 +30,4 @@ const Classes = () => {
   );
 };
 
-export default Classes;
+export default MonsterList;
