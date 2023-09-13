@@ -10,20 +10,24 @@ import { getMonster } from '../redux/monster/monsterSlice';
 import styles from '../styles/Monster.module.css';
 
 const Monster = () => {
-  const monsterStat = useSelector((state) => state.monster.monsterStats);
   const dispatch = useDispatch();
   const { slug } = useParams();
-
   useEffect(() => {
     if (slug) {
       dispatch(getMonster(slug));
     }
-  }, [dispatch, slug]);
+  }, []);
+
+  const monsterStat = useSelector((state) => state.monster.monsterStats);
+
+  const modifier = (num) => (
+    Math.floor(((num) - 10) / 2)
+  );
 
   return (
     <Container className={styles.card}>
       <Row>
-        <Col>
+        <Row>
           <h1>{monsterStat.name}</h1>
           <hr />
           <h4>
@@ -31,7 +35,6 @@ const Monster = () => {
             {' '}
             {monsterStat.ac}
           </h4>
-          <br />
           {monsterStat.hp}
           <br />
           {monsterStat.cr}
@@ -39,7 +42,7 @@ const Monster = () => {
           {monsterStat.stats[0].str}
           {' '}
           (+
-          {Math.floor(((monsterStat.stats[0].str) - 10) / 2)}
+          {modifier(monsterStat.stats[0].str)}
           )
           <br />
           {monsterStat.stats[0].dex}
@@ -54,7 +57,7 @@ const Monster = () => {
           <br />
           {monsterStat.doc}
           <br />
-        </Col>
+        </Row>
         <Col>
           <Link to="/monsters">
             <button type="button" className="backBtn">

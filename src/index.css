@@ -3,11 +3,11 @@
   padding: 0;
   box-sizing: border-box;
   list-style: none;
-  font-family: "Scaly Sans", 'Times New Roman', Times, serif;
 }
 
 body {
   margin: 0;
+  font-family: "Scaly Sans", 'Times New Roman', Times, serif;
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -42,4 +42,9 @@ code {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+img {
+  scale: 0.5;
+  display: inline-block;
 }

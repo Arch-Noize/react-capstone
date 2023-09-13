@@ -5,13 +5,14 @@ import Search from './components/Search';
 import Home from './components/Home';
 import MonsterList from './components/MonsterList';
 import './App.css';
-import { getAllMonsters } from './redux/monster/monsterSlice';
+import { getAllMonsters, getMonster } from './redux/monster/monsterSlice';
 import Monster from './components/Monster';
 
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllMonsters());
+    dispatch(getMonster('aboleth'));
   }, []);
 
   return (

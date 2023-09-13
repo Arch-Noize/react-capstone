@@ -10,6 +10,7 @@ const initialState = {
 export const getAllMonsters = createAsyncThunk('monster/getAllMonsters', async () => {
   const res = await axios.get('https://api.open5e.com/v1/monsters/?limit=50');
   const data = res.data.results;
+  // const num = res.data.count;
   return data.map((item) => ({
     name: item.name,
     slug: item.slug,
