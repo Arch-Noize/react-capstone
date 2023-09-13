@@ -1,11 +1,13 @@
 .card {
   color: black;
+  font-family: "Scaly Sans", 'Times New Roman', Times, serif;
 }
 
 .card hr {
   visibility: visible;
   height: 6px;
-  background-image: url(/src/assets/redTriangle.png);
+  background-image: url('/src/assets/redTriangle.png');
+  filter: saturate(40);
   background-size: 100% 100%;
   border: none;
   margin: 3px;

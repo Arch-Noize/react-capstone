@@ -4,25 +4,27 @@ import axios from 'axios';
 const initialState = {
   monsters: [],
   monsterStats: [],
+  source: '',
   isLoading: true,
 };
 
 export const getAllMonsters = createAsyncThunk('monster/getAllMonsters', async () => {
   const res = await axios.get('https://api.open5e.com/v1/monsters/?limit=50');
   const data = res.data.results;
-  // const num = res.data.count;
   return data.map((item) => ({
     name: item.name,
     slug: item.slug,
+    cr: item.challenge_rating,
   }));
 });
 
-export const getMonsterByBook = createAsyncThunk('monster/getMonsterByBook', async () => {
-  const res = await axios.get('https://api.open5e.com/v1/monsters/?document__slug=wotc-srd');
+export const getMonsterByBook = createAsyncThunk('monster/getMonsterByBook', async (slug) => {
+  const res = await axios.get(`https://api.open5e.com/v1/monsters/?document__slug=${slug}`);
   const data = res.data.results;
   return data.map((item) => ({
     name: item.name,
     slug: item.slug,
+    cr: item.challenge_rating,
   }));
 });
 
@@ -50,6 +52,9 @@ const monsterSlice = createSlice({
   name: 'monsters',
   initialState,
   reducers: {
+    setSource: (state, action) => {
+      state.source = action.payload;
+    },
   },
   extraReducers: {
     // Getting All monsters, display in Home by default
@@ -57,7 +62,6 @@ const monsterSlice = createSlice({
       state.isLoading = true;
     },
     [getAllMonsters.fulfilled]: (state, action) => {
-      state.monsters = [];
       state.monsters = action.payload;
       state.isLoading = false;
     },
@@ -90,4 +94,5 @@ const monsterSlice = createSlice({
   },
 });
 
+export const { setSource } = monsterSlice.actions;
 export default monsterSlice.reducer;

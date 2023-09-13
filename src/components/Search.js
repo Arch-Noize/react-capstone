@@ -1,44 +1,52 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Dropdown, DropdownButton } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 import logo from '../assets/dice.png';
+import { setSource } from '../redux/monster/monsterSlice';
 
 const Search = () => {
   const documents = ['', 'wotc-srd', 'tob', 'tob2', 'tob3', 'menagerie', 'cc'];
+  const [isOpen, setIsOpen] = useState(false);
+  const [book, setBook] = useState('');
 
-  console.log('hi');
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (book !== '') {
+      dispatch(setSource(book));
+    }
+  }, [dispatch, book]);
 
   return (
     <>
-      <DropdownButton id="dropdown-basic-button" title="Choose source">
-        <Dropdown.Item>
-          {documents[0]}
-        </Dropdown.Item>
-
-        <Dropdown.Item>
-          {documents[1]}
-        </Dropdown.Item>
-
-        <Dropdown.Item>
-          {documents[2]}
-        </Dropdown.Item>
-
-        <Dropdown.Item>
-          {documents[3]}
-        </Dropdown.Item>
-
-        <Dropdown.Item>
-          {documents[4]}
-        </Dropdown.Item>
-
-        <Dropdown.Item>
-          {documents[5]}
-        </Dropdown.Item>
-
-        <Dropdown.Item>
-          {documents[6]}
-        </Dropdown.Item>
-      </DropdownButton>
+      <div className="dropdown">
+        <button type="button" onClick={toggleDropdown}>Dropdown</button>
+        {isOpen && (
+          <>
+            {documents.map((item) => (
+              <div
+                key={item}
+                role="button"
+                onClick={() => {
+                  setBook(item);
+                  setIsOpen(!isOpen);
+                }}
+                onKeyDown={() => {
+                  setBook(item);
+                  setIsOpen(!isOpen);
+                }}
+                tabIndex={-1}
+              >
+                {item}
+              </div>
+            ))}
+          </>
+        )}
+      </div>
 
       <Link to="/monsters">
         <div>
