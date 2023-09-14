@@ -23,6 +23,11 @@ const MonsterList = () => {
             <li key={item.slug}>
               <Link to={`/${item.slug}`}>
                 <h3>{item.name}</h3>
+                <p>
+                  CR:
+                  {' '}
+                  {item.cr}
+                </p>
               </Link>
             </li>
           ))}

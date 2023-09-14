@@ -1,32 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   list-style: none;
-  font-family: "Scaly Sans", 'Times New Roman', Times, serif;
+  font-family: "Lato", 'Times New Roman', Times, serif;
 }
 
 body {
   margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
+  font-family:"Lato",
     'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-@font-face {
-  font-family: "Scaly Sans";
-  src: url("https://raw.githubusercontent.com/jonathonf/solbera-dnd-fonts/master/Scaly%20Sans/Scaly%20Sans.otf") format("opentype");
 }
 
 code {

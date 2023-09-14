@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import logo from '../assets/dice.png';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSortDown } from '@fortawesome/free-solid-svg-icons';
 import { setSource } from '../redux/monster/monsterSlice';
+import styles from '../styles/Header.module.css';
 
 const Search = () => {
   const documents = ['', 'wotc-srd', 'tob', 'tob2', 'tob3', 'menagerie', 'cc'];
@@ -22,39 +24,39 @@ const Search = () => {
   }, [dispatch, book]);
 
   return (
-    <>
-      <div className="dropdown">
-        <button type="button" onClick={toggleDropdown}>Dropdown</button>
-        {isOpen && (
-          <>
-            {documents.map((item) => (
-              <div
-                key={item}
-                role="button"
-                onClick={() => {
-                  setBook(item);
-                  setIsOpen(!isOpen);
-                }}
-                onKeyDown={() => {
-                  setBook(item);
-                  setIsOpen(!isOpen);
-                }}
-                tabIndex={-1}
-              >
-                {item}
-              </div>
-            ))}
-          </>
-        )}
+    <div>
+      <button
+        className={styles.dropdown}
+        type="button"
+        onClick={toggleDropdown}
+      >
+        Select book
+        <FontAwesomeIcon icon={faSortDown} />
+      </button>
+      {isOpen && (
+      <div className={styles.dropdownList}>
+        {documents.map((item) => (
+          <div
+            key={item}
+            role="button"
+            onClick={() => {
+              setBook(item);
+              setIsOpen(!isOpen);
+            }}
+            onKeyDown={() => {
+              setBook(item);
+              setIsOpen(!isOpen);
+            }}
+            tabIndex={-1}
+          >
+            <Link to="/monsters">
+              {item}
+            </Link>
+          </div>
+        ))}
       </div>
-
-      <Link to="/monsters">
-        <div>
-          <img src={logo} alt="dice" />
-          <h1>This is a header</h1>
-        </div>
-      </Link>
-    </>
+      )}
+    </div>
   );
 };
 

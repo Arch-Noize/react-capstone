@@ -16,7 +16,7 @@ const Monster = () => {
     if (slug) {
       dispatch(getMonster(slug));
     }
-  }, []);
+  }, [dispatch, slug]);
 
   const monsterStat = useSelector((state) => state.monster.monsterStats);
 

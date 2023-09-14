@@ -15,6 +15,7 @@ export const getAllMonsters = createAsyncThunk('monster/getAllMonsters', async (
     name: item.name,
     slug: item.slug,
     cr: item.challenge_rating,
+    count: res.data.count,
   }));
 });
 
@@ -25,6 +26,7 @@ export const getMonsterByBook = createAsyncThunk('monster/getMonsterByBook', asy
     name: item.name,
     slug: item.slug,
     cr: item.challenge_rating,
+    count: res.data.count,
   }));
 });
 

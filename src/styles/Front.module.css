@@ -1,0 +1,10 @@
+.front {
+  display: flex;
+  align-items: center;
+}
+
+.front img {
+  width: 250px;
+  height: auto;
+  margin: -10px -30px -10px -20px;
+}
