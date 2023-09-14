@@ -27,9 +27,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 🚀 Polution in Europe! <a name="about-project"></a>
+# 🚀 Monsters in Dungeons and Dragons!! <a name="about-project"></a>
 
-This project is a display of space rockets, missions and 'dragons'! All fetched from API. 
+This project is a mobile, single page application that displays monsters from the popular TTRPG Dungeons and Dragons, 5th Edition. Using [Open5eAPI](https://open5e.com/api-docs), React, React Bootstrap, and Redux. 
 
 ## 🛠 Built With <a name="built-with"></a>
 - Node.js
@@ -46,7 +46,9 @@ Website currently uses:
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
-This website currently has nothing in it!
+This website currently displays a list of monsters ordered in alphabetical order, then by their danger level. You can also:
+- Find more information of each monster when clicking the card
+- Filter the list of monsters choosing books from a dropdown
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -54,7 +56,7 @@ This website currently has nothing in it!
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-There's, currently, no live demo for this project.
+You can find a live demo of the project [here](https://dnd-5e-monsters.onrender.com/) and a video explaining the project [here](https://www.loom.com/share/React-Capstone-Project-DnD-Monsters-c9c02b3391754b8ab53cd55287e049f2?sid=7f73ae51-1e26-47c9-ba14-be0fed11b542)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
