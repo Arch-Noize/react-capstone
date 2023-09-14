@@ -40,7 +40,7 @@ const MonsterList = () => {
             </Col>
           ))}
         </Row>
-        <div className="bar">
+        <div className="bar" id="more">
           And many more creatures
           {' '}
           <a href="https://5e.tools/bestiary.html">

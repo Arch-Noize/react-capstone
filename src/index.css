@@ -41,7 +41,15 @@ img {
 .bar {
   background-color: #dd4a83;
   width: 100%;
-  font-size: 1em;
-  font-weight: 500;
+  font-size: 1.2em;
+  font-weight: 700;
   margin-top: 5px;
+}
+
+#more {
+  text-align: center;
+}
+
+.bar a {
+  text-decoration: underline;
 }

@@ -2,20 +2,46 @@
   margin: 10px;
   background-color: #fff;
   color: #000 !important;
-  padding: 20px;
+  padding: 10px 0 10px 0;
+  font-weight: bold;
 }
 
-.card hr {
-  height: 3px;
-  background-image: url('/src/assets/redTriangle.png');
-  background-size: 100% 100%;
-  border: none;
-  margin: 3px;
+.card span {
+  font-weight: 300;
 }
 
 .card img {
   height: 3px;
   width: 600px;
   max-width: 500%;
-  margin-left: -150px;
+  margin: 5px 0 5px -145px;
+}
+
+.card button {
+  margin-left: 100px;
+}
+
+.doc {
+  width: fit-content;
+  height: fit-content;
+  margin-top: -5px;
+  font-size: 0.8em;
+  color: #334155;
+}
+
+.back {
+  border: 2px solid #fe5395;
+  background-color: #fff;
+  border-radius: 100%;
+  filter: opacity(0.7);
+}
+
+.basic span:first-child {
+  margin-left: 10px;
+}
+
+.stats {
+  text-align: center;
+  line-height: 20px;
+  font-size: 13px;
 }

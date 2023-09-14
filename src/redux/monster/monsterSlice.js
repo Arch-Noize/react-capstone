@@ -36,6 +36,7 @@ export const getMonster = createAsyncThunk('monster/getMonster', async (id) => {
     name: res.data.name,
     ac: res.data.armor_class,
     hp: res.data.hit_points,
+    dice: res.data.hit_dice,
     cr: res.data.challenge_rating,
     stats: [{
       str: res.data.strength,
