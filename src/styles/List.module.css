@@ -6,11 +6,11 @@
 }
 
 .item:nth-child(4n-1),
-.item:nth-child(4n){
+.item:nth-child(4n) {
   background-color: #c04778;
 }
 
-.item:last-child{
+.item:last-child {
   margin-bottom: -5px;
 }
 

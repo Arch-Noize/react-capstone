@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Front book component matches the snapshot 1`] = `
+<div>
+  <div
+    class="front"
+  >
+    <img
+      alt=""
+      src="all.jpg"
+    />
+    <div>
+      <h1>
+        All Books
+      </h1>
+      <p>
+        0
+        +
+         
+        Creatures
+      </p>
+    </div>
+  </div>
+</div>
+`;

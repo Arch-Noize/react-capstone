@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Home page matches the snapshot 1`] = `
+<div>
+  <div
+    class="front"
+  >
+    <img
+      alt=""
+      src="all.jpg"
+    />
+    <div>
+      <h1>
+        All Books
+      </h1>
+      <p>
+        0
+        +
+         
+        Creatures
+      </p>
+    </div>
+  </div>
+  <div
+    class="list"
+  >
+    <div
+      class="container row row-cols-2"
+    >
+      <div
+        class="bar"
+      >
+        Monsters and their CR
+      </div>
+    </div>
+    <div
+      class="bar"
+      id="more"
+    >
+      And many more creatures
+       
+      <a
+        href="https://5e.tools/bestiary.html"
+      >
+        here
+      </a>
+    </div>
+  </div>
+</div>
+`;

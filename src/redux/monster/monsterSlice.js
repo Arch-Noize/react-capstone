@@ -59,41 +59,42 @@ const monsterSlice = createSlice({
       state.source = action.payload;
     },
   },
-  extraReducers: {
+  extraReducers(builder) {
+    builder
     // Getting All monsters, display in Home by default
-    [getAllMonsters.pending]: (state) => {
-      state.isLoading = true;
-    },
-    [getAllMonsters.fulfilled]: (state, action) => {
-      state.monsters = action.payload;
-      state.isLoading = false;
-    },
-    [getAllMonsters.rejected]: (state) => {
-      state.isLoading = false;
-    },
-    // Getting monsters by book, display in Home after selecting filter
-    [getMonsterByBook.pending]: (state) => {
-      state.isLoading = true;
-    },
-    [getMonsterByBook.fulfilled]: (state, action) => {
-      state.monsters = [];
-      state.monsters = action.payload;
-      state.isLoading = false;
-    },
-    [getMonsterByBook.rejected]: (state) => {
-      state.isLoading = false;
-    },
-    // Getting info of single Monster, display on respective details page
-    [getMonster.pending]: (state) => {
-      state.isLoading = true;
-    },
-    [getMonster.fulfilled]: (state, action) => {
-      state.monsterStats = action.payload;
-      state.isLoading = false;
-    },
-    [getMonster.rejected]: (state) => {
-      state.isLoading = false;
-    },
+      .addCase(getAllMonsters.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getAllMonsters.fulfilled, (state, action) => {
+        state.monsters = action.payload;
+        state.isLoading = false;
+      })
+      .addCase(getAllMonsters.rejected, (state) => {
+        state.isLoading = false;
+      })
+      // Getting monsters by book, display in Home after selecting filter
+      .addCase(getMonsterByBook.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getMonsterByBook.fulfilled, (state, action) => {
+        state.monsters = [];
+        state.monsters = action.payload;
+        state.isLoading = false;
+      })
+      .addCase(getMonsterByBook.rejected, (state) => {
+        state.isLoading = false;
+      })
+      // Getting info of single Monster, display on respective details page
+      .addCase(getMonster.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getMonster.fulfilled, (state, action) => {
+        state.monsterStats = action.payload;
+        state.isLoading = false;
+      })
+      .addCase(getMonster.rejected, (state) => {
+        state.isLoading = false;
+      });
   },
 });
 

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders CountryCards component matches the snapshot 1`] = `
+<div>
+  <div
+    class="list"
+  >
+    <div
+      class="container row row-cols-2"
+    >
+      <div
+        class="bar"
+      >
+        Monsters and their CR
+      </div>
+    </div>
+    <div
+      class="bar"
+      id="more"
+    >
+      And many more creatures
+       
+      <a
+        href="https://5e.tools/bestiary.html"
+      >
+        here
+      </a>
+    </div>
+  </div>
+</div>
+`;
