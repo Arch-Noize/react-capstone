@@ -4,17 +4,18 @@
   margin: 0;
   list-style: none;
   font-family: "Lato", 'Times New Roman', Times, serif;
-  color: #fff;
 }
 
 body {
   margin: 0;
+  color: #fff;
   background-color: #fe5395;
   font-family:"Lato",
     'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
@@ -44,7 +45,3 @@ img {
   font-weight: 500;
   margin-top: 5px;
 }
-
-.list > * {
-  padding: 0;
-} 

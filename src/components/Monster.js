@@ -7,6 +7,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { getMonster } from '../redux/monster/monsterSlice';
+import hr from '../assets/redTriangle.png';
 import styles from '../styles/Monster.module.css';
 
 const Monster = () => {
@@ -25,16 +26,18 @@ const Monster = () => {
   );
 
   return (
-    <Container className={styles.card}>
-      <Row>
+    <Container>
+      <Row className={styles.card}>
         <Row>
           <h1>{monsterStat.name}</h1>
-          <hr />
-          <h4>
+          <img src={hr} alt="lb" />
+          <p>
             Armor Class
             {' '}
-            {monsterStat.ac}
-          </h4>
+            <span>
+              {monsterStat.ac}
+            </span>
+          </p>
           {monsterStat.hp}
           <br />
           {monsterStat.cr}
