@@ -1,0 +1,8 @@
+.item {
+  padding: 15px;
+}
+
+.item:nth-child(4n-1),
+.item:nth-child(4n){
+  background-color: #c04778;
+}

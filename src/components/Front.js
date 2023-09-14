@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import all from '../assets/all.jpg';
 import wotc from '../assets/wotc-srd.jpg';
 import tob from '../assets/tob.jpg';
 import tob2 from '../assets/tob2.jpg';
@@ -12,6 +13,7 @@ const Front = () => {
   const { source, monsters } = useSelector((state) => state.monster);
 
   const sourceImgs = {
+    all,
     'wotc-srd': wotc,
     tob,
     tob2,
@@ -22,11 +24,12 @@ const Front = () => {
 
   return (
     <div className={styles.front}>
-      <img src={sourceImgs[source]} alt={source} />
+      <img src={sourceImgs[source] || sourceImgs.all} alt={source} />
       <div>
-        <h1>{source.toUpperCase()}</h1>
+        <h1>{source.toUpperCase() || 'All Books'}</h1>
         <p>
-          {monsters[0].count}
+          {monsters.length}
+          +
           {' '}
           Creatures
         </p>

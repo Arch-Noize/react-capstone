@@ -2,12 +2,11 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
-import MonsterList from './components/MonsterList';
 import { getAllMonsters, getMonster } from './redux/monster/monsterSlice';
 import Monster from './components/Monster';
-import Front from './components/Front';
+import Home from './components/Home';
 
-function App() {
+const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllMonsters());
@@ -17,13 +16,13 @@ function App() {
   return (
     <>
       <Header />
-      <Front />
       <Routes>
-        <Route path="/monsters" element={<MonsterList />} />
+        <Route exact path="/" element={<Header />} />
+        <Route index element={<Home />} />
         <Route path="/:slug" element={<Monster />} />
       </Routes>
     </>
   );
-}
+};
 
 export default App;

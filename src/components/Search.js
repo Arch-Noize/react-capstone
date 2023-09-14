@@ -49,7 +49,7 @@ const Search = () => {
             }}
             tabIndex={-1}
           >
-            <Link to="/monsters">
+            <Link to="/">
               {item}
             </Link>
           </div>

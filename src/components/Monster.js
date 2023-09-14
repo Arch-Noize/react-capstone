@@ -59,7 +59,7 @@ const Monster = () => {
           <br />
         </Row>
         <Col>
-          <Link to="/monsters">
+          <Link to="/">
             <button type="button" className="backBtn">
               <FontAwesomeIcon icon={faArrowLeft} />
             </button>

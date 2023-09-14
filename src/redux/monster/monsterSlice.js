@@ -9,7 +9,7 @@ const initialState = {
 };
 
 export const getAllMonsters = createAsyncThunk('monster/getAllMonsters', async () => {
-  const res = await axios.get('https://api.open5e.com/v1/monsters/?limit=50');
+  const res = await axios.get('https://api.open5e.com/v1/monsters/');
   const data = res.data.results;
   return data.map((item) => ({
     name: item.name,

@@ -2,14 +2,14 @@
 
 * {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   list-style: none;
   font-family: "Lato", 'Times New Roman', Times, serif;
+  color: #fff;
 }
 
 body {
   margin: 0;
+  background-color: #fe5395;
   font-family:"Lato",
     'Helvetica Neue',
     sans-serif;
@@ -36,3 +36,15 @@ img {
   scale: 0.5;
   display: inline-block;
 }
+
+.bar {
+  background-color: #dd4a83;
+  width: 100%;
+  font-size: 1em;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.list > * {
+  padding: 0;
+} 

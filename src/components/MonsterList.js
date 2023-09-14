@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Row, Col } from 'react-bootstrap';
 import { getAllMonsters, getMonsterByBook } from '../redux/monster/monsterSlice';
+import styles from '../styles/List.module.css';
 
 const MonsterList = () => {
   const { monsters, source } = useSelector((state) => state.monster);
@@ -17,10 +19,13 @@ const MonsterList = () => {
 
   return (
     <>
-      <div>
-        <ul>
+      <div className="list">
+        <Row xs={2}>
+          <div className="bar">
+            Monsters and their CR
+          </div>
           {monsters.map((item) => (
-            <li key={item.slug}>
+            <Col key={item.slug} className={styles.item}>
               <Link to={`/${item.slug}`}>
                 <h3>{item.name}</h3>
                 <p>
@@ -29,9 +34,16 @@ const MonsterList = () => {
                   {item.cr}
                 </p>
               </Link>
-            </li>
+            </Col>
           ))}
-        </ul>
+        </Row>
+        <div className="bar">
+          And many more creatures
+          {' '}
+          <a href="https://5e.tools/bestiary.html">
+            here
+          </a>
+        </div>
       </div>
     </>
   );
