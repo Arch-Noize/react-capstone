@@ -1,31 +1,26 @@
 .card {
-  margin: 10px;
-  background-color: #fff;
-  color: #000 !important;
   padding: 10px 0 10px 0;
   font-weight: bold;
+  display: flex;
+  overflow-x: hidden;
 }
 
-.card span {
-  font-weight: 300;
+.front {
+  display: flex;
+  text-align: right;
+  justify-content: flex-end;
+  padding: 20px 10px 10px 10px;
 }
 
-.card img {
-  height: 3px;
-  width: 600px;
-  max-width: 500%;
-  margin: 5px 0 5px -145px;
-}
-
-.card button {
-  margin-left: 100px;
+.front p {
+  margin-top: 6px;
 }
 
 .doc {
   width: fit-content;
-  margin-top: -5px;
   font-size: 0.8em;
-  color: #334155;
+  color: #fff;
+  margin-right: 8px;
 }
 
 .back {
@@ -35,12 +30,25 @@
   filter: opacity(0.7);
 }
 
-.basic span:first-child {
-  margin-left: 10px;
+.bar {
+  padding: 0 !important;
 }
 
-.stats {
-  text-align: center;
-  line-height: 20px;
+.basic {
+  display: flex;
+  max-width: 110%;
+  width: 2200px;
+}
+
+.basic > * {
+  padding: 10px;
+}
+
+.basic > *:nth-child(odd) {
+  background-color: #c04778;
+}
+
+.stat {
+  text-align: right;
   font-size: 13px;
 }

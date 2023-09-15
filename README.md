@@ -158,7 +158,7 @@ If you like this project kindly give it a star⭐️.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank [Microverse](https://github.com/microverseinc) for the immense support.
+I would like to thank [Microverse](https://github.com/microverseinc) for the immense support. Also, this website uses the Ballhead App design by [Nelson Sakwa](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)) under the [Creative Commons License](https://creativecommons.org/licenses/by-nc/4.0/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -166,6 +166,6 @@ I would like to thank [Microverse](https://github.com/microverseinc) for the imm
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed, and uses the Ballhead App design by [Nelson Sakwa](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)) under the [Creative Commons License](https://creativecommons.org/licenses/by-nc/4.0/)
+This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

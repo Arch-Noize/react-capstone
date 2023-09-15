@@ -2,12 +2,11 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import {
-  Container, Row, Col, Badge, Stack,
+  Container, Row, Col, Badge,
 } from 'react-bootstrap/';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { getMonster } from '../redux/monster/monsterSlice';
-import hr from '../assets/redTriangle.png';
 import styles from '../styles/Monster.module.css';
 
 const Monster = () => {
@@ -28,128 +27,140 @@ const Monster = () => {
   return (
     <Container>
       <Row className={styles.card}>
-        <Row>
-          <Stack direction="horizontal" gap={2}>
+        <Col xs={6}>
+          <Link to="/">
+            <button type="button" className={styles.back}>
+              <FontAwesomeIcon icon={faArrowLeft} />
+            </button>
+          </Link>
+        </Col>
+
+        <Col xs={6}>
+          <Row className={styles.front}>
             <h1>{monsterStat.name}</h1>
             <Badge pill className={styles.doc}>
               {monsterStat.doc}
             </Badge>
-            <Link to="/">
-              <button type="button" className={styles.back}>
-                <FontAwesomeIcon icon={faArrowLeft} />
-              </button>
-            </Link>
-          </Stack>
-          <img src={hr} alt="lb" />
-          <Row className={styles.basic}>
             <p>
-              Armor Class
+              CR:
               {' '}
-              <span>
-                {monsterStat.ac}
-              </span>
-            </p>
-            <p>
-              Hit Points
-              {' '}
-              <span>
-                {monsterStat.hp}
-              </span>
-              {' '}
-              <span>
-                (
-                {monsterStat.dice}
-                )
-              </span>
-            </p>
-            <p>
-              Challenge Rating
-              {' '}
-              <span>
-                {monsterStat.cr}
-              </span>
+              {monsterStat.cr}
             </p>
           </Row>
+        </Col>
 
-          <img src={hr} alt="lb" />
+        <Row className={styles.basic}>
 
-          {monsterStat.stats.map((stat) => (
-            <Row xs={6} key={stat.str} className={styles.stats}>
-              <Col>
-                <p>
-                  STR
-                  {' '}
-                  <span>
-                    {stat.str}
-                    (
-                    {(modifier(stat.str) < 0 ? '' : '+') + modifier(stat.str)}
-                    )
-                  </span>
-                </p>
-              </Col>
-              <Col>
-                <p>
-                  DEX
-                  {' '}
-                  <span>
-                    {stat.dex}
-                    (
-                    {(modifier(stat.dex) < 0 ? '' : '+') + modifier(stat.dex)}
-                    )
-                  </span>
-                </p>
-              </Col>
-              <Col>
-                <p>
-                  CON
-                  {' '}
-                  <span>
-                    {stat.con}
-                    (
-                    {(modifier(stat.con) < 0 ? '' : '+') + modifier(stat.con)}
-                    )
-                  </span>
-                </p>
-              </Col>
-              <Col>
-                <p>
-                  INT
-                  {' '}
-                  <span>
-                    {stat.int}
-                    (
-                    {(modifier(stat.int) < 0 ? '' : '+') + modifier(stat.int)}
-                    )
-                  </span>
-                </p>
-              </Col>
-              <Col>
-                <p>
-                  WIS
-                  {' '}
-                  <span>
-                    {stat.wis}
-                    (
-                    {(modifier(stat.wis) < 0 ? '' : '+') + modifier(stat.wis)}
-                    )
-                  </span>
-                </p>
-              </Col>
-              <Col>
-                <p>
-                  CHA
-                  {' '}
-                  <span>
-                    {stat.cha}
-                    (
-                    {(modifier(stat.cha) < 0 ? '' : '+') + modifier(stat.cha)}
-                    )
-                  </span>
-                </p>
-              </Col>
-            </Row>
-          ))}
+          <Row className={styles.bar}>
+            <Col>
+              MONSTER STATS
+            </Col>
+          </Row>
+
+          <Row>
+            <Col>
+              Armor Class
+            </Col>
+            <Col className={styles.stat}>
+              {monsterStat.ac}
+            </Col>
+          </Row>
+
+          <Row>
+            <Col>
+              Hit Points
+            </Col>
+            <Col className={styles.stat}>
+              {monsterStat.hp}
+              (
+              {monsterStat.dice}
+              )
+            </Col>
+          </Row>
+
+          <Row>
+            <Col>
+              Challenge Rating
+            </Col>
+            <Col className={styles.stat}>
+              {monsterStat.cr}
+            </Col>
+          </Row>
+
+          <Row>
+            <Col>
+              Strength
+            </Col>
+            <Col className={styles.stat}>
+              {monsterStat.stats[0].str}
+              (
+              {(modifier(monsterStat.stats[0].str) < 0 ? '' : '+') + modifier(monsterStat.stats[0].str)}
+              )
+            </Col>
+          </Row>
+
+          <Row>
+            <Col>
+              Dexterity
+            </Col>
+            <Col className={styles.stat}>
+              {monsterStat.stats[0].dex}
+              (
+              {(modifier(monsterStat.stats[0].dex) < 0 ? '' : '+') + modifier(monsterStat.stats[0].dex)}
+              )
+            </Col>
+          </Row>
+
+          <Row>
+            <Col>
+              Constitution
+            </Col>
+            <Col className={styles.stat}>
+              {monsterStat.stats[0].con}
+              (
+              {(modifier(monsterStat.stats[0].con) < 0 ? '' : '+') + modifier(monsterStat.stats[0].con)}
+              )
+            </Col>
+          </Row>
+
+          <Row>
+            <Col>
+              Intelligence
+            </Col>
+            <Col className={styles.stat}>
+              {monsterStat.stats[0].int}
+              (
+              {(modifier(monsterStat.stats[0].int) < 0 ? '' : '+') + modifier(monsterStat.stats[0].int)}
+              )
+            </Col>
+          </Row>
+
+          <Row>
+            <Col>
+              Wisdom
+            </Col>
+            <Col className={styles.stat}>
+              {monsterStat.stats[0].wis}
+              (
+              {(modifier(monsterStat.stats[0].wis) < 0 ? '' : '+') + modifier(monsterStat.stats[0].wis)}
+              )
+            </Col>
+          </Row>
+
+          <Row>
+            <Col>
+              Charisma
+            </Col>
+            <Col className={styles.stat}>
+              {monsterStat.stats[0].cha}
+              (
+              {(modifier(monsterStat.stats[0].cha) < 0 ? '' : '+') + modifier(monsterStat.stats[0].cha)}
+              )
+            </Col>
+          </Row>
+
         </Row>
+
       </Row>
     </Container>
   );
