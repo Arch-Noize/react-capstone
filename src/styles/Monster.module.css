@@ -1,0 +1,54 @@
+.card {
+  padding: 10px 0 10px 0;
+  font-weight: bold;
+  display: flex;
+  overflow-x: hidden;
+}
+
+.front {
+  display: flex;
+  text-align: right;
+  justify-content: flex-end;
+  padding: 20px 10px 10px 10px;
+}
+
+.front p {
+  margin-top: 6px;
+}
+
+.doc {
+  width: fit-content;
+  font-size: 0.8em;
+  color: #fff;
+  margin-right: 8px;
+}
+
+.back {
+  border: 2px solid #fe5395;
+  background-color: #fff;
+  border-radius: 100%;
+  filter: opacity(0.7);
+}
+
+.bar {
+  padding: 0 !important;
+}
+
+.basic {
+  display: flex;
+  max-width: 110%;
+  width: 2200px;
+}
+
+.basic > * {
+  padding: 10px;
+}
+
+.basic > *:nth-child(odd) {
+  background-color: #c04778;
+}
+
+.stat {
+  text-align: right;
+  font-size: 13px;
+}

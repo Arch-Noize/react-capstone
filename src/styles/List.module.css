@@ -1,0 +1,33 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center;
+}
+
+.item:nth-child(4n-1),
+.item:nth-child(4n) {
+  background-color: #c04778;
+}
+
+.item:last-child {
+  margin-bottom: -5px;
+}
+
+.cr {
+  text-align: right;
+  margin: 5px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 97%;
+}
+
+.detail {
+  border-radius: 100%;
+  padding: 3px;
+  border: 2px solid #fff;
+  margin-left: 83%;
+}

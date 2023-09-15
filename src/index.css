@@ -1,19 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+  margin: 0;
+  list-style: none;
+  font-family: "Lato", 'Times New Roman', Times, serif;
+}
+
 body {
   margin: 0;
+  color: #fff;
+  background-color: #fe5395;
   font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
+    "Lato",
     'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
@@ -24,4 +27,31 @@ code {
     Consolas,
     'Courier New',
     monospace;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  scale: 0.5;
+  display: inline-block;
+}
+
+.bar {
+  background-color: #dd4a83;
+  width: 100%;
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+#more {
+  text-align: center;
+  width: 107%;
+}
+
+.bar a {
+  text-decoration: underline;
 }

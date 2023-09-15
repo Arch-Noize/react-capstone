@@ -1,0 +1,16 @@
+.front {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.front h1 {
+  font-weight: 600;
+}
+
+.front img {
+  width: 400px;
+  height: auto;
+  margin: -100px;
+  border-radius: 12px;
+}
